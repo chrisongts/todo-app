@@ -1,0 +1,61 @@
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center">Todo Application Angular 2</h1>
+      </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <form (submit)="add(newtodo.value)">
+        <div class="input-group">
+          <input #newtodo type="text" class="form-control" placeholder="Add Todo item">
+          <span class="input-group-btn">
+            <button class="btn btn-info" type="submit">Add</button>
+          </span>
+        </div>
+      </form>
+    </div>
+ </div>
+ <br/>
+ <div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">My Todo List</div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let todo of todos">
+          <div class="row">
+            <div class="col-xs-10">
+              {{todo}}
+            </div>
+            <div class="col-xs-2">
+              <button id="todo-remove" (click)="remove(todo)" type="button" class="btn btn-danger">Remove</button>
+              <button id="todo-completed" (click)="completed(todo)" type="button" class="btn btn-success">Completed</button>
+            </div>
+         </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+ <div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">Completed Todo List</div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let todoc of todosCompleted">
+          <div class="row">
+            <div class="col-xs-10">
+              {{todoc}}
+            </div>
+            <div class="col-xs-2">
+              <button id="todo-remove" (click)="delete(todo)" type="button" class="btn btn-danger">Remove</button>
+            </div>
+         </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
